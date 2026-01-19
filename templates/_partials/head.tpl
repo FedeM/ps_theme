@@ -62,6 +62,10 @@
   <link rel="shortcut icon" type="image/x-icon" href="{$shop.favicon}?{$shop.favicon_update_time}">
 {/block}
 
+{block name='head_fonts'}
+  {include file="_partials/head-fonts.tpl"}
+{/block}
+
 {block name='hook_header'}
   {$HOOK_HEADER nofilter}
 {/block}
