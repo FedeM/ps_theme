@@ -5,86 +5,65 @@ $color-text: #545454;
 $color-stock: #FFC304;
 $color-secondary: #C2E3EA;
 
-.active-filter-wrapper {
-  margin-bottom: 20px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-
-  &::before {
-    content: "Filtros activos";
-    font-weight: bold;
-    color: $color-text;
-    margin-right: 10px;
-  }
-
-  .filter-block {
-    background: #fff;
-    border: 1px solid $color-brand;
-    color: $color-brand;
-    padding: 5px 15px;
-    border-radius: 20px;
-    font-size: 13px;
-    display: inline-flex;
-    align-items: center;
-
-    a {
-      margin-left: 8px;
-      color: $color-brand;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  }
+body{
+  font-family: 'Montserrat', sans-serif !important;
 }
 
-section#products {
-  .active_filters {
+.active_filters {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+
+  .active-filters-label {
+    font-weight: 600;
+    font-size: 16px;
+    color: #414141;
+    margin: 0;
+  }
+
+  ul {
     display: flex;
-    align-items: center;
-    padding: 15px 0;
-    margin-bottom: 20px;
+    flex-wrap: wrap;
+    gap: 8px;
+    list-style: none;
+    padding: 0;
+    margin: 5px 10px;
 
-    // Texto "Filtros activos"
-    &::before {
-      content: "Filtros activos";
-      font-weight: 600;
-      color: $color-text;
-      margin-right: 15px;
-      font-size: 14px;
-    }
+    .filter-block {
+      background: #ffffff;
+      border: 1px solid $color-brand;
+      color: $color-brand;
+      border-radius: 25px; 
+      padding: 5px 12px;
+      display: inline-flex;
 
-    .active-filter-title {
-      display: none;
-    }
-
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      list-style: none;
-      margin: 0;
-      padding: 0;
-
-      .filter-block {
-        background-color: #fff;
-        border: 1px solid $color-brand;
-        border-radius: 20px;
-        padding: 4px 12px;
-        font-size: 12px;
-        color: $color-brand;
-        display: inline-flex;
+      .js-search-link {
+        display: flex !important;
+        flex-direction: row;
         align-items: center;
+        justify-content: center;
+        padding: 5px 6px;
+        color: $color-brand;
+        text-decoration: none;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: normal;
+        white-space: nowrap;
 
-        a {
-          color: #328189;
-          text-decoration: none;
-          margin-left: 5px;
-          
-          i { // El icono de la "X" para cerrar
-            font-size: 10px;
-            vertical-align: middle;
-          }
+        .material-icons.close {
+          font-size: 14px;
+          margin-left: 4px;
+          color: $color-brand;
+          display: flex;
+          align-items: center;
+          font-weight: bold;
+          flex-shrink: 0;
         }
+      }
+
+      &:hover {
+        background-color: #f0f8f9;
       }
     }
   }
