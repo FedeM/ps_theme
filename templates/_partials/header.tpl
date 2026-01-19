@@ -23,69 +23,91 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {block name='header_banner'}
-    <div class="header-banner">
-        {hook h='displayBanner'}
-    </div>
-{/block}
-
-{block name='header_nav'}
-    <nav class="header-nav border-bottom bg-light py-1 d-none d-md-block">
+    <div class="header-banner topbar">
         <div class="container">
-            <div class="row align-items-center">
-                {hook h='displayNav1'}
-                {hook h='displayNav2'}
+            <div class="row align-items-center justify-content-between">
+                
+                {* Parte izquierda: Horario y Teléfono *}
+                <div class="col-auto topbar-left">
+                    <span class="topbar-text">
+                        Lun-Vie 9:00h - 19:00h 
+                        <span class="separator">|</span> 
+                        976 123 456
+                    </span>
+                </div>
+
+                {* Parte derecha: Promo envíos *}
+                <div class="col-auto topbar-right">
+                    <span class="topbar-text promo">
+                        Envíos gratuítos por compras SUPERIORES a 50€
+                    </span>
+                </div>
+
             </div>
         </div>
-    </nav>
+    </div>
 {/block}
 
 {block name='header_top'}
-    <div class="js-header-top-wrapper">
-
-        <div class="header-top js-header-top">
-            <div class="header-top__content pt-md-3 pb-md-0 py-2">
-
-                <div class="container">
-
-                    <div class="row header-top__row">
-
-                        <div class="col flex-grow-0 header-top__block header-top__block--menu-toggle d-block d-md-none">
-                            <a
-                                    class="header-top__link"
-                                    rel="nofollow"
-                                    href="#"
-                                    data-toggle="modal"
-                                    data-target="#mobile_top_menu_wrapper"
-                            >
-                                <div class="header-top__icon-container">
-                                    <span class="header-top__icon material-icons">menu</span>
-                                </div>
-                            </a>
-                        </div>
-
-                        <div class="col-md-4 col header-top__block header-top__block--logo">
-                            <a href="{$urls.pages.index}">
-                                {images_block webpEnabled=$webpEnabled}
-                                    <img
-                                            {if !empty($shop.logo_details)}
-                                                src="{$shop.logo_details.src}"
-                                                width="{$shop.logo_details.width}"
-                                                height="{$shop.logo_details.height}"
-                                            {else}
-                                                src="{$shop.logo}"
-                                            {/if}
-                                            class="logo img-fluid"
-                                            alt="{$shop.name} {l s='logo' d='Shop.Theme.Global'}">
-                                {/images_block}
-                            </a>
-                        </div>
-
-                        {hook h='displayTop'}
-                    </div>
-
+    <div class="header-top js-header-top">
+        <div class="container">
+            <div class="row align-items-center py-3">
+                
+                <div class="col-md-3 col-6">
+                   
                 </div>
+
+                <div class="col-md-6 d-none d-md-block">
+                    <div id="search_widget" class="search-widget-custom">
+                        <form method="get" action="{$urls.pages.search}">
+                            <input type="hidden" name="controller" value="search">
+                            <input type="text" name="s" placeholder="Buscar productos..." aria-label="Buscar">
+                            <button type="submit">
+                                <i class="material-icons search"></i>
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <div class="col-md-3 col-6 d-flex justify-content-end align-items-center header-icons-custom">
+                    
+                    <a href="{$urls.pages.my_account}" class="header-icon-item" title="Mi cuenta">
+                        <img src="{$urls.theme_assets}img/icon-profile.svg" alt="Mi cuenta" class="user-icon-img">
+                    </a>
+
+                    <a href="{$urls.pages.cart}" class="header-icon-item" title="Carrito">
+                        <div class="cart-icon-wrapper">
+                            <img src="{$urls.theme_assets}img/icon-cart.svg" alt="Carrito" class="cart-icon-img">
+                            <span class="cart-count">{$cart.products_count|default:0}</span>
+                        </div>
+                    </a>
+                </div>
+                
             </div>
         </div>
     </div>
-    {hook h='displayNavFullWidth'}
+
+    <div class="header-menu-section">
+        <div class="container">
+            <div class="row align-items-center">
+
+                <div class="col-auto">
+                    <button
+                        class="navbar-toggler mobile-menu-toggler"
+                        type="button"
+                        data-toggle="modal"
+                        data-target="#mobile_top_menu_wrapper"
+                    >
+                    <i class="material-icons">menu</i>
+                    </button>
+                </div>
+
+                <div class="col">
+                    {hook h='displayNavFullWidth'}
+                </div>
+                {include file='_partials/modal-menu.tpl'}
+            </div>
+        </div>
+    </div>
+
 {/block}
