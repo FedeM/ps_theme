@@ -64,18 +64,24 @@
           </div>
         </div>
 
-        {block name='page_header_container'}
-          {if $page.page_name == 'category' && $category.image}
-            <div class="category-header-banner">
-              <div class="container">
-                <div class="category-title-wrapper">
-                  <img src="{$category.image.large.url}" alt="{$category.name}" width="58" height="58" class="category-banner-icon">
-                  <h1 class="category-title">{$category.name}</h1>
+        {if $page.page_name == 'category'}
+          <div class="category-decoration-image">
+            <img src="{$urls.theme_assets}img/header-print-screen.png" alt="Decoración" class="img-fluid full-width">
+          </div>
+
+          {block name='page_header_container'}
+            {if $page.page_name == 'category' && $category.image}
+              <div class="category-header-banner">
+                <div class="container">
+                  <div class="category-title-wrapper">
+                    <img src="{$category.image.large.url}" alt="{$category.name}" width="58" height="58" class="category-banner-icon">
+                    <h1 class="category-title">{$category.name}</h1>
+                  </div>
                 </div>
               </div>
-            </div>
-          {/if}
-        {/block}
+            {/if}
+          {/block}
+        {/if}
 
         <div class="container">
 

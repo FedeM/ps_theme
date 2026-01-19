@@ -136,3 +136,23 @@ section#products {
     }
   }
 }
+
+.category-decoration-image {
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+
+  img.full-width {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    max-height: 206px;
+  }
+}
+
+.category-header-banner {
+  background-color: $color-brand;
+  padding: 20px 0;
+  margin-top: 0; 
+  margin-bottom: 30px;
+}
