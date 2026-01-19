@@ -22,29 +22,36 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{block name='product_miniature_item'}
-  {$listingType = $type|default:'listing'}
-  <div
-    {if $listingType === 'listing'}
-      class="products-list__block products-list__block--grid"
-    {elseif $listingType === 'slider'}
-      class="swiper-slide product-slider__item col-6 col-md-4 col-lg-3"
-    {/if}
-    >
-    <article
-      class="product-miniature card js-product-miniature p-2 h-100 {block name='product_miniature_item_class'}{/block}"
-      data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}"
-      >
-      {include file='catalog/_partials/miniatures/_partials/product-thumb.tpl' thumbExtraClass='mb-2'}
+<article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}">
+  <div class="thumbnail-container">
+    <a href="{$product.url}">
+      <img src="{$product.cover.bySize.home_default.url}" alt="{$product.cover.legend}">
+    </a>
 
-      {include file='catalog/_partials/miniatures/_partials/product-title.tpl'}
-
-      {include file='catalog/_partials/miniatures/_partials/product-prices.tpl'}
-
-      {block name='product_form'}
-        {include file='catalog/_partials/miniatures/_partials/product-form.tpl'}
-      {/block}
-
-    </article>
+    {foreach from=$product.flags item=flag}
+      {if $flag.type === 'new'}
+        <span class="badge badge-new">NUEVO</span>
+      {elseif $flag.type === 'out_of_stock'}
+        <span class="badge badge-out-of-stock">FUERA DE STOCK</span>
+      {/if}
+    {/foreach}
   </div>
-{/block}
+
+  <div class="product-description">
+    {block name='product_name'}
+      <h3 class="product-title"><a href="{$product.url}">{$product.name}</a></h3>
+    {/block}
+
+    {block name='product_price_and_shipping'}
+      {if $product.show_price}
+        <div class="product-price-and-shipping">
+          <span class="price">{$product.price}</span>
+          {if $product.has_discount}
+            <span class="regular-price">{$product.regular_price}</span>
+            <span class="discount-percentage">{$product.discount_percentage}</span>
+          {/if}
+        </div>
+      {/if}
+    {/block}
+  </div>
+</article>
