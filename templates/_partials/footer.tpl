@@ -32,6 +32,22 @@
 <div class="footer-container">
   <div class="container">
     <div class="row">
+      <div class="col-md-3 col-12 mb-lg-4 custom-contact-column">
+          <ul class="contact-links-list">
+            <li>
+              <img src="{$urls.theme_assets}img/phone.svg" alt="phone icon" class="contact-icon"/>
+              <a href="tel:+5491112345678">+34 976 123 456</a>
+            </li>
+            <li>
+              <img src="{$urls.theme_assets}img/email.svg" alt="email icon" class="contact-icon"/>
+              <a href="mailto:info@dominio.com">info@dominio.com</a>
+            </li>
+            <li>
+              <img src="{$urls.theme_assets}img/location.svg" alt="location icon" class="contact-icon"/>
+              <span>PC/ Calle del cliente nº 45<br>50011, Zaragoza</span>
+            </li>
+          </ul>
+      </div>
       {block name='hook_footer'}
         {hook h='displayFooter'}
       {/block}
@@ -40,6 +56,10 @@
       {block name='hook_footer_after'}
         {hook h='displayFooterAfter'}
       {/block}
+
+      <div class="col-12 text-right footer-copyright">
+        <p>Todos los derechos reservados - Desarrollado por VGS</p>
+      </div>
     </div>
   </div>
 </div>
