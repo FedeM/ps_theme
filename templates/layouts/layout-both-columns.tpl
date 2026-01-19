@@ -55,10 +55,29 @@
         {/block}
 
         {hook h="displayWrapperTop"}
+
+        <div class="breadcrumb-wrapper">
+          <div class="container">
+            {block name='breadcrumb'}
+              {include file='_partials/breadcrumb.tpl'}
+            {/block}
+          </div>
+        </div>
+
+        {block name='page_header_container'}
+          {if $page.page_name == 'category' && $category.image}
+            <div class="category-header-banner">
+              <div class="container">
+                <div class="category-title-wrapper">
+                  <img src="{$category.image.large.url}" alt="{$category.name}" width="58" height="58" class="category-banner-icon">
+                  <h1 class="category-title">{$category.name}</h1>
+                </div>
+              </div>
+            </div>
+          {/if}
+        {/block}
+
         <div class="container">
-          {block name='breadcrumb'}
-            {include file='_partials/breadcrumb.tpl'}
-          {/block}
 
           <div class="row">
             {block name="left_column"}

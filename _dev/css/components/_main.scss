@@ -1,0 +1,138 @@
+$color-brand: #328189;
+$color-brand-light: rgba(50, 129, 137, 0.3);
+$color-info-bg: #BAE4EB33;
+$color-text: #545454;
+$color-stock: #FFC304;
+$color-secondary: #C2E3EA;
+
+.active-filter-wrapper {
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  &::before {
+    content: "Filtros activos";
+    font-weight: bold;
+    color: $color-text;
+    margin-right: 10px;
+  }
+
+  .filter-block {
+    background: #fff;
+    border: 1px solid $color-brand;
+    color: $color-brand;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 13px;
+    display: inline-flex;
+    align-items: center;
+
+    a {
+      margin-left: 8px;
+      color: $color-brand;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  }
+}
+
+section#products {
+  .active_filters {
+    display: flex;
+    align-items: center;
+    padding: 15px 0;
+    margin-bottom: 20px;
+
+    // Texto "Filtros activos"
+    &::before {
+      content: "Filtros activos";
+      font-weight: 600;
+      color: $color-text;
+      margin-right: 15px;
+      font-size: 14px;
+    }
+
+    .active-filter-title {
+      display: none;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+
+      .filter-block {
+        background-color: #fff;
+        border: 1px solid $color-brand;
+        border-radius: 20px;
+        padding: 4px 12px;
+        font-size: 12px;
+        color: $color-brand;
+        display: inline-flex;
+        align-items: center;
+
+        a {
+          color: #328189;
+          text-decoration: none;
+          margin-left: 5px;
+          
+          i { // El icono de la "X" para cerrar
+            font-size: 10px;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+}
+
+.breadcrumb-wrapper {
+  background-color: $color-secondary;
+  padding: 10px 0;
+  
+  .breadcrumb {
+    background: transparent;
+    margin: 0;
+    padding: 0;
+
+    li.breadcrumb-item.active {
+        color: $color-brand;
+    }
+
+    li.breadcrumb-item + li.breadcrumb-item::before {
+      color: $color-brand;
+      content: ">";
+      margin: 0 8px;
+    }
+  }
+}
+
+.category-header-banner {
+  background-color: $color-brand;
+  padding: 20px 0;
+  margin-bottom: 30px;
+
+  .category-title-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    .category-banner-icon {
+      width: 58px; 
+      height: 58px;
+      object-fit: contain;
+    }
+
+    .category-title {
+      color: #ffffff;
+      font-size: 28px;
+      font-weight: 700;
+      text-transform: uppercase;
+      margin: 0;
+    }
+  }
+}

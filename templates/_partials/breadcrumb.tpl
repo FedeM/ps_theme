@@ -31,12 +31,16 @@
           {foreach from=$breadcrumb.links item=path name=breadcrumb}
             {block name='breadcrumb_item'}
               <li {if $smarty.foreach.breadcrumb.last}class="breadcrumb-item active" aria-current="page"{else}class="breadcrumb-item"{/if}>
-                {if !$smarty.foreach.breadcrumb.last}
+                {if $smarty.foreach.breadcrumb.first}
                   <a href="{$path.url}">
-                {/if}
-                  {$path.title}
-                {if !$smarty.foreach.breadcrumb.last}
+                    <img src="{$urls.theme_assets}img/home.png" alt="Home" class="breadcrumb-home">
                   </a>
+                {else}
+                  {if !$smarty.foreach.breadcrumb.last}
+                    <a href="{$path.url}">{$path.title}</a>
+                  {else}
+                    {$path.title}
+                  {/if}
                 {/if}
               </li>
             {/block}
