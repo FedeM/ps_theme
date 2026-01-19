@@ -9,6 +9,13 @@ body{
   font-family: 'Montserrat', sans-serif !important;
 }
 
+.container {
+    @media (min-width: 1200px) {
+        max-width: 1320px; // Aumentar el ancho estándar
+    }
+}
+
 @import "main";
 @import "product-card";
 @import "sidebar-category";
+@import "pagination";

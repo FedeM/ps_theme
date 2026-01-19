@@ -26,18 +26,27 @@
 
 {block name='pagination_page_list'}
   {if $pagination.should_be_displayed}
-    <nav>
-      <ul class="pagination justify-content-center mt-4 mb-2">
+    <nav class="pagination-container d-flex align-items-center justify-content-between flex-wrap">
+      
+      <div class="showing-results">
+        {l s='Mostrando %from%-%to% de %total% artículos' d='Shop.Theme.Catalog' sprintf=[
+          '%from%' => $pagination.items_shown_from,
+          '%to%' => $pagination.items_shown_to,
+          '%total%' => $pagination.total_items
+        ]}
+      </div>
+
+      <ul class="page-list pagination mt-4 mb-2">
         {foreach from=$pagination.pages item="page"}
-          <li  class="page-item{if $page.current} active{/if} {if $page.type === 'spacer'}disabled{/if}">
+          <li class="page-item 
+            {if $page.current}active{/if} 
+            {if $page.type === 'spacer'}disabled{/if} 
+            {if $page.type === 'previous'}prev-item{/if} 
+            {if $page.type === 'next'}next-item{/if} 
+            {if $page.type === 'page'}number-item{/if}">
+            
             {if $page.type === 'spacer'}
-              <span
-                rel="{if $page.type === 'previous'}prev{elseif $page.type === 'next'}next{else}nofollow{/if}"
-                href="#"
-                class="page-link"
-              >
-                &hellip;
-              </span>
+              <span class="page-link spacer">&hellip;</span>
             {else}
               <a
                 rel="{if $page.type === 'previous'}prev{elseif $page.type === 'next'}next{else}nofollow{/if}"
@@ -45,11 +54,11 @@
                 class="page-link {['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}"
               >
                 {if $page.type === 'previous'}
-                  <span class="material-icons font-reset align-middle">keyboard_arrow_left</span>
-                  <span class="sr-only">{l s='Previous' d='Shop.Theme.Actions'}</span>
+                  <span class="material-icons">keyboard_arrow_left</span>
+                  <span class="text-label">{l s='Anterior' d='Shop.Theme.Actions'}</span>
                 {elseif $page.type === 'next'}
-                  <span class="material-icons font-reset align-middle">keyboard_arrow_right</span>
-                  <span class="sr-only">{l s='Next' d='Shop.Theme.Actions'}</span>
+                  <span class="text-label">{l s='Siguiente' d='Shop.Theme.Actions'}</span>
+                  <span class="material-icons">keyboard_arrow_right</span>
                 {else}
                   {$page.page}
                 {/if}
