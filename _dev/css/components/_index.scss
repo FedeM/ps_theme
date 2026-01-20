@@ -4,6 +4,8 @@ $color-info-bg: #BAE4EB33;
 $color-text: #545454;
 $color-stock: #FFC304;
 $color-secondary: #C2E3EA;
+$color-terciary: #592BC7;
+$color-gray: #D0C8EA80;
 
 body{
   font-family: 'Montserrat', sans-serif !important;
@@ -21,3 +23,4 @@ body{
 @import "pagination";
 @import "footer";
 @import "header";
+@import "product-page";

@@ -1,0 +1,92 @@
+.row.product-container.js-product-container {
+    margin-top: 45px;
+
+    .col-md-7.mb-4 {
+        h1 {
+            font-size: 32px;
+            font-weight: 600;
+            color: $color-brand;
+        }
+
+        .product-information {
+            .product-prices {
+                margin-top: 20px;
+
+                .badge.badge-light {
+                    background-color: $color-gray;
+                    font-size: 20px;
+                    color: $color-terciary;
+                    font-weight: 500;
+                    padding: 8px 12px;
+                    border-radius: 62px;
+                }
+
+                .price--lg{
+                    font-size: 40px;
+                    font-weight: 700;
+                    color: $color-terciary;
+                }
+
+                .price--regular {
+                    font-size: 24px;
+                    color: $color-text;
+                    text-decoration: line-through;
+                    margin-left: 15px;
+                }
+            }
+        }
+    }
+}
+
+.product-add-to-cart.js-product-add-to-cart {
+    .product-quantity {
+        .qty-wrapper {
+            label.qty-label {
+                font-size: 16px;
+                font-weight: 500;
+                color: $color-text;
+                margin-right: 10px;
+            }
+
+            .input-group.bootstrap-touchspin {
+                input#quantity_wanted {
+                    border: 0;
+                }
+            }
+        }
+
+        .add.col.mt-2.px-1 {
+            .btn.btn-primary.add-to-cart {
+                background-color: $color-terciary;
+                border: none;
+                font-size: 15px;
+                width: 265px;
+                height: 48px;
+                text-transform: uppercase;
+                font-weight: 600;
+                padding: 12px 24px;
+                border-radius: 62px;
+
+                &:hover {
+                    background-color: darken($color-terciary, 10%);
+                }
+            }
+        }
+    }
+}
+
+.product-actions {
+    .shipping-info {
+        font-size: 15px;
+        color: $color-terciary;
+        font-weight: 600;
+        background: $color-gray;
+        height: 54px;
+        padding: 18px;
+        margin-top: 30px;
+
+        .shipping-text {
+            margin-left: 10px;
+        }
+    }
+}
