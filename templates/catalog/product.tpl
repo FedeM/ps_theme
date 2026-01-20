@@ -157,7 +157,7 @@
         </div>
       </div>
     </div>
-    {include file="catalog/_partials/product-tabs.tpl"}
+    {include file="catalog/_partials/product-description.tpl"}
 
     
 
