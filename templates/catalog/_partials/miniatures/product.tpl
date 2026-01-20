@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}">
+<article class="product-miniature js-product-miniature " data-id-product="{$product.id_product}">
   <div class="thumbnail-container">
     <a href="{$product.url}">
       <img src="{$product.cover.bySize.home_default.url}" alt="{$product.cover.legend}">

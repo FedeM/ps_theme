@@ -103,4 +103,43 @@
   }
 }
 
+.products-list {
+    display: flex;
+    flex-wrap: wrap;
+    
+    .product-miniature {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+        
+        .thumbnail-container {
+            width: 100%;
+            img {
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+            }
+        }
+    }
+}
 
+@media (max-width: 767px) {
+    #btn-open-sidebar {
+        max-width: 90%;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+#js-product-list {
+    .products-list.row {
+        justify-content: center;
+    }
+    
+    .product-miniature {
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+}

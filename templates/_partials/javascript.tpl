@@ -46,3 +46,30 @@
     {/foreach}
   </script>
 {/if}
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const btnOpen = document.getElementById('btn-open-sidebar');
+      const btnClose = document.getElementById('close-mobile-sidebar');
+      const sidebar = document.getElementById('mobile-sidebar-canvas');
+      const overlay = document.getElementById('sidebar-overlay');
+
+      if (btnOpen) {
+          btnOpen.addEventListener('click', function() {
+              sidebar.classList.add('active');
+              overlay.classList.add('active');
+              document.body.style.overflow = 'hidden'; // Evita scroll de fondo
+          });
+      }
+
+      [btnClose, overlay].forEach(el => {
+          if (el) {
+              el.addEventListener('click', function() {
+                  sidebar.classList.remove('active');
+                  overlay.classList.remove('active');
+                  document.body.style.overflow = '';
+              });
+          }
+      });
+  });
+</script>
