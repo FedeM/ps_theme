@@ -79,6 +79,21 @@
               {/block}
             {/if}
 
+            <div class="container product-info-section">
+              <div class="row">
+                <div class="col-md-4">
+                  <span class="product-info-label">Marca:</span>
+                  <span class="product-info-value">{$product.manufacturer_name}</span>
+                </div>
+                <div class="col-md-4">
+                  <span class="product-info-label">Referencia:</span>
+                  <span class="product-info-value">{$product.reference}</span>
+                </div>
+                <div class="col-md-4 text-md-right">
+                  <span class="product-info-label">Disponibilidad:</span>
+                  <span class="product-info-value">{$product.availability}</span>
+                </div>
+            </div>
 
             {block name='product_prices'}
               {include file='catalog/_partials/product-prices.tpl'}
