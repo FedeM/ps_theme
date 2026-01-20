@@ -12,6 +12,13 @@ Falcon theme
 * ⭐️ up to date
 * 🐧 prestashop theme
 
+## Edición
+#### Editado por Federico Mariotti para prueba técnica de VGS
+### Limitaciones a la hora de maquetar
+Al momento de comenzar con la maqueta del theme me encontré con el inconveniente de no conocer del todo la estructura de los templates, por lo que me costó encontrar los templates correctos y acostumbrarme a la estructura. Otra limitación que tuve es con respecto a los módulos ya que varias secciones están definidas en módulos, por lo que tuve que encontrar una alternativa para no modificarlos.
+
+Por último, lo que más limitado sentí es la edición del footer, no da flexibilidad para agregar contenido específico ni alterar el contenido de los módulos, por lo que se tuvieron que adaptar.
+
 ## Sponsors
 
 <h3 align="center">
