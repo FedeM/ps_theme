@@ -52,8 +52,6 @@
         {block name='page_content_container'}
             {block name='page_content'}
               <div class="position-relative">
-                {include file='catalog/_partials/product-flags.tpl'}
-
                 {block name='product_cover_thumbnails'}
                   {include file='catalog/_partials/product-cover-thumbnails.tpl'}
                 {/block}
@@ -81,18 +79,19 @@
 
             <div class="container product-info-section">
               <div class="row">
-                <div class="col-md-4">
+                <div class="col-xl-4">
                   <span class="product-info-label">Marca:</span>
                   <span class="product-info-value">{$product.manufacturer_name}</span>
                 </div>
-                <div class="col-md-4">
+                <div class="col-xl-4">
                   <span class="product-info-label">Referencia:</span>
                   <span class="product-info-value">{$product.reference}</span>
                 </div>
-                <div class="col-md-4 text-md-right">
+                <div class="col-xl-4">
                   <span class="product-info-label">Disponibilidad:</span>
                   <span class="product-info-value">{$product.availability}</span>
                 </div>
+              </div>
             </div>
 
             {block name='product_prices'}
