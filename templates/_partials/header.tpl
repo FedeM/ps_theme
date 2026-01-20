@@ -57,7 +57,7 @@
                    
                 </div>
 
-                <div class="col-md-6 d-none d-md-block">
+                <div class="col-md-6">
                     <div id="search_widget" class="search-widget-custom">
                         <form method="get" action="{$urls.pages.search}">
                             <input type="hidden" name="controller" value="search">
