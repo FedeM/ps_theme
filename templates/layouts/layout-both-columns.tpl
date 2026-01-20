@@ -96,13 +96,15 @@
               </div>
             {/block}
 
-            <div class="d-lg-none d-flex justify-content-center mb-3">
-                <button id="btn-open-sidebar" class="btn btn-primary w-100">
-                    <i class="material-icons">filter_list</i> Ver Categorías y Filtros
-                </button>
-            </div>
+            {if $page.page_name == 'category'}
+              <div class="d-lg-none d-flex justify-content-center mb-3">
+                  <button id="btn-open-sidebar" class="btn btn-primary w-100">
+                      <i class="material-icons">filter_list</i> Ver Categorías y Filtros
+                  </button>
+              </div>
 
-            {include file='_partials/sidebar-mobile.tpl'}
+              {include file='_partials/sidebar-mobile.tpl'}
+            {/if}
 
             {block name="content_wrapper"}
               <div id="content-wrapper" class="js-content-wrapper col-12 col-lg-9">
