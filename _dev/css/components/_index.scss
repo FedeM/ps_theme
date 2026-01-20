@@ -17,6 +17,10 @@ body{
     }
 }
 
+.bg-info-bg {
+    background-color: $color-info-bg !important;
+}
+
 @import "main";
 @import "product-card";
 @import "sidebar-category";

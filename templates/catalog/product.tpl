@@ -137,6 +137,8 @@
                     <span class="shipping-text">Cómpralo ahora y recíbelo mañana</span>
                   </div>
 
+                  {include file='catalog/_partials/product-datasheet.tpl'}
+
                   {block name='product_additional_info'}
                     {include file='catalog/_partials/product-additional-info.tpl'}
                   {/block}

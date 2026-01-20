@@ -131,3 +131,25 @@
         }
     }
 }
+
+.product-features {
+    border: 1px solid $color-brand-light;
+    .d-flex {
+        padding: 12px 16px;
+
+        > div {
+            strong {
+                color: $color-brand;
+                text-transform: uppercase;
+                font-weight: 600;
+                display: inline-block;
+                width: 160px;
+            }
+
+            .product-feature-value {
+                color: $color-text;
+                display: inline-block;
+            }
+        }
+    }
+}
