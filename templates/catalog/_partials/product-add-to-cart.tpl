@@ -27,23 +27,33 @@
 
     {block name='product_quantity'}
       <div class="product-quantity row mb-1 mx-n1 mt-n2 align-items-center">
+
         <div class="qty col-12 col-sm-auto mx-auto mt-2 px-1">
-          <input
-            type="number"
-            name="qty"
-            id="quantity_wanted"
-            inputmode="numeric"
-            pattern="[0-9]*"
-            {if $product.quantity_wanted}
-              value="{$product.quantity_wanted}"
-              min="{$product.minimal_quantity}"
-            {else}
-              value="1"
-              min="1"
-            {/if}
-            class="input-group input-touchspin"
-            aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
-          >
+          <div class="qty-wrapper d-flex align-items-center">
+            <label
+              for="quantity_wanted"
+              class="qty-label mb-0 mr-2"
+            >
+              {l s='Quantity' d='Shop.Theme.Catalog'}
+            </label>
+
+            <input
+              type="number"
+              name="qty"
+              id="quantity_wanted"
+              inputmode="numeric"
+              pattern="[0-9]*"
+              {if $product.quantity_wanted}
+                value="{$product.quantity_wanted}"
+                min="{$product.minimal_quantity}"
+              {else}
+                value="1"
+                min="1"
+              {/if}
+              class="input-group input-touchspin"
+              aria-label="{l s='Quantity' d='Shop.Theme.Actions'}"
+            >
+          </div>
         </div>
 
         <div class="add col mt-2 px-1">
@@ -59,13 +69,6 @@
           </button>
         </div>
 
-        <div class="col-auto mt-2 px-1">
-          <div class="js-product-actions-buttons">
-            <div class="row mx-n1 mt-n2 align-items-center">
-              {hook h='displayProductActions' product=$product}
-            </div>
-          </div>
-        </div>
       </div>
 
     {/block}
