@@ -87,7 +87,7 @@
 
           <div class="row">
             {block name="left_column"}
-              <div id="left-column" class="col-12 col-md-4 col-lg-3">
+              <div id="left-column" class="col-12 col-md-4 col-lg-3 d-none">
                 {if $page.page_name == 'product'}
                   {hook h='displayLeftColumnProduct' product=$product category=$category}
                 {else}
@@ -95,6 +95,14 @@
                 {/if}
               </div>
             {/block}
+
+            <div class="d-lg-none text-center mb-3">
+                <button id="btn-open-sidebar" class="btn btn-primary w-100">
+                    <i class="material-icons">filter_list</i> Ver Categorías y Filtros
+                </button>
+            </div>
+
+            {include file='_partials/sidebar-mobile.tpl'}
 
             {block name="content_wrapper"}
               <div id="content-wrapper" class="js-content-wrapper left-column right-column col-md-4 col-lg-6">
