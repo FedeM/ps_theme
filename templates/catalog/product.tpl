@@ -67,9 +67,6 @@
               <h1 class="h1">{block name='page_title'}{$product.name}{/block}</h1>
             {/block}
           {/block}
-          {block name='product_prices'}
-            {include file='catalog/_partials/product-prices.tpl'}
-          {/block}
 
           <div class="product-information ">
             {block name='product_description_short'}
@@ -81,6 +78,11 @@
                 {include file="catalog/_partials/product-customization.tpl" customizations=$product.customizations}
               {/block}
             {/if}
+
+
+            {block name='product_prices'}
+              {include file='catalog/_partials/product-prices.tpl'}
+            {/block}
 
             <div class="product-actions js-product-actions">
               {block name='product_buy'}
@@ -116,6 +118,11 @@
                     {include file='catalog/_partials/product-add-to-cart.tpl'}
                   {/block}
 
+                  <div class="container shipping-info">
+                    <img src="{$urls.theme_assets}img/icon-truck.svg" alt="Shipping Info" class="shipping-icon">
+                    <span class="shipping-text">Cómpralo ahora y recíbelo mañana</span>
+                  </div>
+
                   {block name='product_additional_info'}
                     {include file='catalog/_partials/product-additional-info.tpl'}
                   {/block}
@@ -136,19 +143,7 @@
     </div>
     {include file="catalog/_partials/product-tabs.tpl"}
 
-    {block name='product_footer'}
-      {hook h='displayFooterProduct' product=$product category=$category}
-    {/block}
-
-    {block name='product_accessories'}
-      {if $accessories}
-        {include file='catalog/_partials/product-accessories.tpl' products=$accessories}
-      {/if}
-    {/block}
-
-    {block name='product_images_modal'}
-      {include file='catalog/_partials/product-images-modal.tpl'}
-    {/block}
+    
 
     {block name='page_footer_container'}
       <footer class="page-footer">
